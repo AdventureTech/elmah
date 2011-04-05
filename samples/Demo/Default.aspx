@@ -36,7 +36,7 @@
         }
         catch (Exception ex)
         {
-            ErrorSignal.FromContext(Context).Raise(ex);
+            ErrorSignal.FromContext(new HttpContextWrapper(Context)).Raise(ex);
             SignalMessage.InnerText = "Error trapped and signaled at " 
                 + DateTime.Now.ToLongTimeString();
         }

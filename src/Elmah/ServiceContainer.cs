@@ -45,8 +45,8 @@ namespace Elmah
 
         public object GetService(Type serviceType)
         {
-            return serviceType == typeof(ErrorLog) 
-                 ? ErrorLog.GetDefaultImpl(new HttpContextWrapper(_context as HttpContext)) 
+            return serviceType == typeof(ErrorLog)
+					? ErrorLog.GetDefaultImpl(_context as HttpContext != null ? new HttpContextWrapper(_context as HttpContext) : null) 
                  : null;
         }
     }

@@ -190,7 +190,7 @@ namespace Elmah
             {
                 var entries = files.Skip(pageIndex * pageSize)
                                    .Take(pageSize)
-                                   .Select(LoadErrorLogEntry);
+                                   .Select(info=>LoadErrorLogEntry(info));
 
                 foreach (var entry in entries)
                     errorEntryList.Add(entry);
