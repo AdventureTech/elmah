@@ -53,7 +53,7 @@ namespace Elmah
             if (errorId.Length == 0)
                 throw new ApplicationException("Missing error identifier specification.");
 
-            ErrorLogEntry entry = ErrorLog.GetDefault(context).GetError(errorId);
+            ErrorLogEntry entry = ErrorLog.GetDefault(new HttpContextWrapper(context)).GetError(errorId);
 
             //
             // Perhaps the error has been deleted from the store? Whatever

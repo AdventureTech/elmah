@@ -101,7 +101,7 @@
             The handler called when an exception is explicitly signaled.
             </summary>
         </member>
-        <member name="M:Elmah.ErrorTweetModule.LogException(System.Exception,System.Web.HttpContext)">
+        <member name="M:Elmah.ErrorTweetModule.LogException(System.Exception,System.Web.HttpContextBase)">
             <summary>
             Logs an exception and its context to the error log.
             </summary>
@@ -134,7 +134,7 @@
             Initializes the module and prepares it to handle requests.
             </summary>
         </member>
-        <member name="M:Elmah.ErrorLogModule.GetErrorLog(System.Web.HttpContext)">
+        <member name="M:Elmah.ErrorLogModule.GetErrorLog(System.Web.HttpContextBase)">
             <summary>
             Gets the <see cref="T:Elmah.ErrorLog"/> instance to which the module
             will log exceptions.
@@ -151,7 +151,7 @@
             The handler called when an exception is explicitly signaled.
             </summary>
         </member>
-        <member name="M:Elmah.ErrorLogModule.LogException(System.Exception,System.Web.HttpContext)">
+        <member name="M:Elmah.ErrorLogModule.LogException(System.Exception,System.Web.HttpContextBase)">
             <summary>
             Logs an exception and its context to the error log.
             </summary>
@@ -277,7 +277,7 @@
             of <see cref="M:Elmah.ErrorLog.GetErrors(System.Int32,System.Int32,System.Collections.Generic.IList{Elmah.ErrorLogEntry})"/>.
             </summary>
         </member>
-        <member name="M:Elmah.ErrorLog.GetDefault(System.Web.HttpContext)">
+        <member name="M:Elmah.ErrorLog.GetDefault(System.Web.HttpContextBase)">
             <summary>
             Gets the default error log implementation specified in the 
             configuration file, or the in-memory log implemention if
@@ -1228,7 +1228,7 @@
             The handler called when an exception is explicitly signaled.
             </summary>
         </member>
-        <member name="M:Elmah.ErrorMailModule.OnError(System.Exception,System.Web.HttpContext)">
+        <member name="M:Elmah.ErrorMailModule.OnError(System.Exception,System.Web.HttpContextBase)">
             <summary>
             Reports the exception.
             </summary>
@@ -1541,7 +1541,7 @@
             from a given <see cref="P:Elmah.Error.Exception"/> instance.
             </summary>
         </member>
-        <member name="M:Elmah.Error.#ctor(System.Exception,System.Web.HttpContext)">
+        <member name="M:Elmah.Error.#ctor(System.Exception,System.Web.HttpContextBase)">
             <summary>
             Initializes a new instance of the <see cref="T:Elmah.Error"/> class
             from a given <see cref="P:Elmah.Error.Exception"/> instance and 
@@ -1807,7 +1807,7 @@
             </para>
             </remarks>
         </member>
-        <member name="M:Elmah.MsAjaxDeltaErrorLogModule.LogException(System.Exception,System.Web.HttpContext)">
+        <member name="M:Elmah.MsAjaxDeltaErrorLogModule.LogException(System.Exception,System.Web.HttpContextBase)">
             <summary>
             Logs an exception and its context to the error log.
             </summary>
@@ -1822,7 +1822,7 @@
             Renders an error as an XML document.
             </summary>
         </member>
-        <member name="M:Elmah.Environment.TryGetMachineName(System.Web.HttpContext,System.String)">
+        <member name="M:Elmah.Environment.TryGetMachineName(System.Web.HttpContextBase,System.String)">
             <remarks>
             If <paramref name="unknownName"/> is a null reference then this
             method will still return an empty string.

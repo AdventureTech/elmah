@@ -108,7 +108,7 @@ namespace Elmah
             _format.Header();
 
             AsyncResult result = _result = new AsyncResult(extraData);
-            _log = ErrorLog.GetDefault(context);
+            _log = ErrorLog.GetDefault(new HttpContextWrapper(context));
             _pageIndex = 0;
             _lastBeatTime = DateTime.Now;
             _context = context;

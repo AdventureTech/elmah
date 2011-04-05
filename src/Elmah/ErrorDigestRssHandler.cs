@@ -78,7 +78,7 @@ namespace Elmah
         {
             Response.ContentType = "application/xml";
 
-            ErrorLog log = ErrorLog.GetDefault(_context);
+            ErrorLog log = ErrorLog.GetDefault(new HttpContextWrapper(_context));
 
             //
             // We'll be emitting RSS vesion 0.91.
@@ -92,7 +92,7 @@ namespace Elmah
             //
             
             Channel channel = new Channel();
-            string hostName = Environment.TryGetMachineName(_context);
+            string hostName = Environment.TryGetMachineName(new HttpContextWrapper(_context));
             channel.title = "Daily digest of errors in " 
                           + log.ApplicationName
                           + (hostName.Length > 0 ? " on " + hostName : null);

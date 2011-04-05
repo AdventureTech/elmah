@@ -94,15 +94,14 @@ namespace Elmah
             if (exception == null)
                 return;
 
-            HttpContext context = HttpContext.Current;
-            LogException(exception, context);
+            LogException(exception, new HttpContextWrapper(HttpContext.Current));
         }
 
         /// <summary>
         /// Logs an exception and its context to the error log.
         /// </summary>
 
-        protected virtual void LogException(Exception e, HttpContext context)
+        protected virtual void LogException(Exception e, HttpContextBase context)
         {
             ErrorSignal.FromContext(context).Raise(e, context);
         }

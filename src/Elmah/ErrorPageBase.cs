@@ -54,7 +54,7 @@ namespace Elmah
             get
             {
                 if (_log == null)
-                    _log = ErrorLog.GetDefault(Context);
+						 _log = ErrorLog.GetDefault(new System.Web.HttpContextWrapper(Context)); 
 
                 return _log;
             }

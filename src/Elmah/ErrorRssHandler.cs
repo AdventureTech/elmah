@@ -52,7 +52,7 @@ namespace Elmah
 
             const int pageSize = 15;
             List<ErrorLogEntry> errorEntryList = new List<ErrorLogEntry>(pageSize);
-            ErrorLog log = ErrorLog.GetDefault(context);
+            ErrorLog log = ErrorLog.GetDefault(new HttpContextWrapper(context));
             log.GetErrors(0, pageSize, errorEntryList);
 
             //
@@ -67,7 +67,7 @@ namespace Elmah
             //
             
             Channel channel = new Channel();
-            string hostName = Environment.TryGetMachineName(context);
+            string hostName = Environment.TryGetMachineName(new HttpContextWrapper(context));
             channel.title = "Error log of " + log.ApplicationName 
                           + (hostName.Length > 0 ? " on " + hostName : null);
             channel.description = "Log of recent errors";
